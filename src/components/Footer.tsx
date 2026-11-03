@@ -21,28 +21,28 @@ export const Footer: React.FC<FooterProps> = ({ language, profile }) => {
     .map((n) => n[0])
     .slice(0, 2)
     .join('')
-    .toUpperCase() || 'AJ';
+    .toUpperCase() || 'OR';
 
   return (
-    <footer className="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
+    <footer className="bg-[#240e1d] text-pink-200/70 py-16 border-t border-pink-900/50">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-slate-800/80">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-pink-900/40">
           {/* Brand Identity */}
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-sky-400 font-extrabold text-xl tracking-tighter">//</span>
-              <span className="text-sky-400 font-black text-xl tracking-tight">{initials}</span>
+              <span className="text-pink-400 font-extrabold text-xl tracking-tighter">//</span>
+              <span className="text-pink-400 font-black text-xl tracking-tight">{initials}</span>
               <span className="text-white font-bold tracking-widest text-base sm:text-lg uppercase">
                 {profile.name}
               </span>
             </div>
-            <p className="text-xs text-slate-400 max-w-sm">
+            <p className="text-xs text-pink-200/60 max-w-sm">
               {t.tagline}
             </p>
           </div>
 
           {/* Quick Links */}
-          <nav className="flex flex-wrap items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-400">
+          <nav className="flex flex-wrap items-center gap-6 text-xs font-semibold uppercase tracking-wider text-pink-200/70">
             <a href="#home" className="hover:text-white transition-colors">
               {navT.home}
             </a>
@@ -63,17 +63,17 @@ export const Footer: React.FC<FooterProps> = ({ language, profile }) => {
           {/* Back to top button */}
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white uppercase tracking-wider transition-colors group cursor-pointer"
+            className="flex items-center gap-2 text-xs font-semibold text-pink-200 hover:text-white uppercase tracking-wider transition-colors group cursor-pointer"
           >
             <span>{t.backToTop}</span>
-            <div className="w-8 h-8 rounded-full bg-slate-900 group-hover:bg-sky-500 group-hover:text-white flex items-center justify-center transition-colors">
+            <div className="w-8 h-8 rounded-full bg-pink-950/80 border border-pink-800/60 group-hover:bg-pink-600 group-hover:text-white flex items-center justify-center transition-colors">
               <ArrowUp className="w-4 h-4" />
             </div>
           </button>
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-pink-300/50">
           <div>
             © {new Date().getFullYear()} {profile.name}. {t.rights}
           </div>

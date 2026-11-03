@@ -10,7 +10,7 @@ export const StatsRibbon: React.FC<StatsRibbonProps> = ({ language }) => {
   const t = translations[language].stats;
 
   return (
-    <section className="border-y border-slate-100 bg-slate-50/70 py-10 relative">
+    <section className="border-y border-pink-200/80 bg-pink-100/50 py-10 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {t.items.map((item, index) => (
@@ -21,7 +21,7 @@ export const StatsRibbon: React.FC<StatsRibbonProps> = ({ language }) => {
               <span className="text-sm font-semibold text-slate-800 mt-1">
                 {item.label}
               </span>
-              <span className="text-xs text-slate-500 mt-0.5">
+              <span className="text-xs text-pink-900/70 mt-0.5">
                 {item.sublabel}
               </span>
             </div>

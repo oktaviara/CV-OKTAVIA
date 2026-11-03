@@ -11,15 +11,15 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ langua
   const t = translations[language].testimonials;
 
   return (
-    <section className="py-24 bg-white border-t border-slate-100 relative">
+    <section className="py-24 bg-pink-50/50 border-t border-pink-200/60 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <div className="mb-3">
-            <span className="text-xs font-bold tracking-widest text-sky-600 uppercase">
+            <span className="text-xs font-bold tracking-widest text-pink-600 uppercase">
               {t.kicker}
             </span>
-            <div className="w-10 h-0.5 bg-sky-500 mt-1.5" />
+            <div className="w-10 h-0.5 bg-pink-500 mt-1.5" />
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mt-4 text-balance">
             {t.title}
@@ -34,7 +34,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ langua
           {t.items.map((item) => (
             <div
               key={item.id}
-              className="bg-slate-50/70 rounded-2xl p-8 border border-slate-200/80 shadow-xs flex flex-col justify-between"
+              className="bg-white/95 rounded-2xl p-8 border border-pink-200/80 shadow-xs flex flex-col justify-between hover:border-pink-300 transition-colors"
             >
               <div>
                 {/* Rating stars & Quote Icon */}
@@ -44,7 +44,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ langua
                       <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <Quote className="w-6 h-6 text-slate-300" />
+                  <Quote className="w-6 h-6 text-pink-300" />
                 </div>
 
                 {/* Quote Text */}
@@ -54,12 +54,12 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ langua
               </div>
 
               {/* Attribution */}
-              <div className="pt-6 border-t border-slate-200/60">
+              <div className="pt-6 border-t border-pink-100">
                 <div className="font-bold text-slate-900 text-sm">{item.clientName}</div>
                 <div className="text-xs text-slate-600 font-medium">{item.role}</div>
-                <div className="text-xs text-sky-600 font-medium mt-0.5">{item.company}</div>
+                <div className="text-xs text-pink-600 font-semibold mt-0.5">{item.company}</div>
 
-                <div className="mt-3 text-[11px] text-slate-400 pt-2 border-t border-slate-200/40">
+                <div className="mt-3 text-[11px] text-slate-400 pt-2 border-t border-pink-100">
                   <span className="font-medium text-slate-500">
                     {language === 'id' ? 'Proyek:' : 'Delivered:'}{' '}
                   </span>

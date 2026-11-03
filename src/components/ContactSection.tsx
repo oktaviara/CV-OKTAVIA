@@ -70,15 +70,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   };
 
   return (
-    <section id="contact" className="py-24 bg-slate-50/80 border-t border-slate-100 relative">
+    <section id="contact" className="py-24 bg-pink-100/40 border-t border-pink-200/70 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <div className="mb-3">
-            <span className="text-xs font-bold tracking-widest text-sky-600 uppercase">
+            <span className="text-xs font-bold tracking-widest text-pink-600 uppercase">
               {t.kicker}
             </span>
-            <div className="w-10 h-0.5 bg-sky-500 mt-1.5" />
+            <div className="w-10 h-0.5 bg-pink-500 mt-1.5" />
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mt-4 text-balance">
             {t.title}
@@ -91,24 +91,24 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Direct Contact & Information */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white rounded-2xl p-8 border border-slate-200/90 shadow-xs space-y-6">
+            <div className="bg-white/95 rounded-2xl p-8 border border-pink-200/90 shadow-xs space-y-6">
               <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">
                 {t.orReachDirectly}
               </h3>
 
               {/* Email item with copy button */}
-              <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-pink-50/70 border border-pink-200/60">
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-10 h-10 rounded-lg bg-sky-500 text-white flex items-center justify-center shrink-0 shadow-xs">
+                  <div className="w-10 h-10 rounded-lg bg-pink-500 text-white flex items-center justify-center shrink-0 shadow-xs">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="min-w-0">
-                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
+                    <span className="text-[11px] font-bold text-pink-900/60 uppercase tracking-wider block">
                       Email
                     </span>
                     <a
                       href={`mailto:${profile.email}`}
-                      className="text-sm font-semibold text-slate-800 hover:text-sky-600 truncate block transition-colors"
+                      className="text-sm font-semibold text-slate-800 hover:text-pink-600 truncate block transition-colors"
                     >
                       {profile.email}
                     </a>
@@ -116,7 +116,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 </div>
                 <button
                   onClick={() => handleCopy(profile.email, 'email')}
-                  className="p-2 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-200/60 transition-colors shrink-0"
+                  className="p-2 text-pink-700/60 hover:text-pink-900 rounded-lg hover:bg-pink-100 transition-colors shrink-0 cursor-pointer"
                   title="Copy email"
                   aria-label="Copy email"
                 >
@@ -129,19 +129,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               </div>
 
               {/* Phone item with copy button & WhatsApp direct chat */}
-              <div className="flex flex-col gap-2 p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <div className="flex flex-col gap-2 p-4 rounded-xl bg-pink-50/70 border border-pink-200/60">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-10 h-10 rounded-lg bg-sky-500 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <div className="w-10 h-10 rounded-lg bg-pink-500 text-white flex items-center justify-center shrink-0 shadow-xs">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div className="min-w-0">
-                      <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
+                      <span className="text-[11px] font-bold text-pink-900/60 uppercase tracking-wider block">
                         {language === 'id' ? 'Telepon / WhatsApp' : 'Phone / WhatsApp'}
                       </span>
                       <a
                         href={`tel:${profile.phone.replace(/[^0-9+]/g, '')}`}
-                        className="text-sm font-semibold text-slate-800 hover:text-sky-600 truncate block transition-colors"
+                        className="text-sm font-semibold text-slate-800 hover:text-pink-600 truncate block transition-colors"
                       >
                         {profile.phone}
                       </a>
@@ -149,7 +149,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </div>
                   <button
                     onClick={() => handleCopy(profile.phone, 'phone')}
-                    className="p-2 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-200/60 transition-colors shrink-0"
+                    className="p-2 text-pink-700/60 hover:text-pink-900 rounded-lg hover:bg-pink-100 transition-colors shrink-0 cursor-pointer"
                     title="Copy phone"
                     aria-label="Copy phone"
                   >
@@ -162,7 +162,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 </div>
 
                 {/* Direct WhatsApp Action Link */}
-                <div className="pt-2 border-t border-slate-200/60 flex justify-end">
+                <div className="pt-2 border-t border-pink-200/60 flex justify-end">
                   <a
                     href={`https://wa.me/${profile.phone.startsWith('0') ? '62' + profile.phone.slice(1) : profile.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(
                       language === 'id'
@@ -180,12 +180,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               </div>
 
               {/* Location item */}
-              <div className="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100">
-                <div className="w-10 h-10 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center shrink-0">
+              <div className="flex items-start gap-3 p-4 rounded-xl bg-pink-50/70 border border-pink-200/60">
+                <div className="w-10 h-10 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
+                  <span className="text-[11px] font-bold text-pink-900/60 uppercase tracking-wider block">
                     {language === 'id' ? 'Lokasi & Zona Waktu' : 'Location & Timezone'}
                   </span>
                   <span className="text-sm font-semibold text-slate-800">
@@ -196,7 +196,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
               {/* Response Time Indicator */}
               <div className="pt-2 flex items-center gap-2 text-xs text-slate-500">
-                <Clock className="w-4 h-4 text-sky-500" />
+                <Clock className="w-4 h-4 text-pink-500" />
                 <span>{t.responseTime}</span>
               </div>
             </div>
@@ -204,10 +204,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
           {/* Right Column: Interactive Form with Quick Presets */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200/90 shadow-xs">
+            <div className="bg-white/95 rounded-2xl p-8 sm:p-10 border border-pink-200/90 shadow-xs">
               {/* Quick Presets Buttons */}
               <div className="mb-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-3">
+                <span className="text-xs font-bold uppercase tracking-wider text-pink-900/70 block mb-3">
                   {t.quickPresetsTitle}
                 </span>
                 <div className="flex flex-wrap gap-2">
@@ -216,7 +216,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       key={idx}
                       type="button"
                       onClick={() => handlePresetClick(preset.text, preset.label)}
-                      className="px-3 py-1.5 text-xs font-medium bg-slate-100 hover:bg-sky-50 hover:text-sky-700 hover:border-sky-200 rounded-lg border border-slate-200 transition-colors text-slate-700 text-left"
+                      className="px-3 py-1.5 text-xs font-medium bg-pink-50/80 hover:bg-pink-100 hover:text-pink-900 hover:border-pink-300 rounded-lg border border-pink-200 transition-colors text-pink-900 text-left cursor-pointer"
                     >
                       {preset.label}
                     </button>
@@ -237,7 +237,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="mt-4 px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
+                    className="mt-4 px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-slate-700 bg-pink-50 hover:bg-pink-100 rounded-lg transition-colors border border-pink-200 cursor-pointer"
                   >
                     {language === 'id' ? 'Kirim Pesan Lain' : 'Send Another Message'}
                   </button>
@@ -257,7 +257,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                           setFormData({ ...formData, name: e.target.value })
                         }
                         placeholder={language === 'id' ? 'Nama Anda' : 'Your Name'}
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-100 outline-hidden text-sm text-slate-900 bg-slate-50/50"
+                        className="w-full px-4 py-3 rounded-lg border border-pink-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-100 outline-hidden text-sm text-slate-900 bg-pink-50/30"
                       />
                     </div>
 
@@ -273,7 +273,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                           setFormData({ ...formData, email: e.target.value })
                         }
                         placeholder="email@example.com"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-100 outline-hidden text-sm text-slate-900 bg-slate-50/50"
+                        className="w-full px-4 py-3 rounded-lg border border-pink-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-100 outline-hidden text-sm text-slate-900 bg-pink-50/30"
                       />
                     </div>
                   </div>
@@ -289,7 +289,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         setFormData({ ...formData, subject: e.target.value })
                       }
                       placeholder={language === 'id' ? 'Contoh: Proyek E-Commerce Baru' : 'e.g. New E-Commerce Web App'}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-100 outline-hidden text-sm text-slate-900 bg-slate-50/50"
+                      className="w-full px-4 py-3 rounded-lg border border-pink-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-100 outline-hidden text-sm text-slate-900 bg-pink-50/30"
                     />
                   </div>
 
@@ -305,14 +305,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         setFormData({ ...formData, message: e.target.value })
                       }
                       placeholder={t.formMessage}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-100 outline-hidden text-sm text-slate-900 bg-slate-50/50 resize-y"
+                      className="w-full px-4 py-3 rounded-lg border border-pink-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-100 outline-hidden text-sm text-slate-900 bg-pink-50/30 resize-y"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 px-6 bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 shadow-xs disabled:opacity-50"
+                    className="w-full py-3.5 px-6 bg-pink-600 hover:bg-pink-700 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 shadow-xs shadow-pink-200 disabled:opacity-50 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <span>{t.formSending}</span>

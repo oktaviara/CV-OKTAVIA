@@ -29,12 +29,15 @@ export default function App() {
       try {
         const parsed = JSON.parse(saved);
         if (parsed.name && parsed.name !== 'Alex James') {
-          return {
+          const updated = {
             ...defaultProfile,
             ...parsed,
+            avatarUrl: defaultProfile.avatarUrl,
+            phone: parsed.phone === '085643642345' ? defaultProfile.phone : (parsed.phone || defaultProfile.phone),
             bioShort: defaultProfile.bioShort,
             bioFull: defaultProfile.bioFull,
           };
+          return updated;
         }
       } catch {
         return defaultProfile;
@@ -92,7 +95,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans-clean flex flex-col antialiased selection:bg-sky-500 selection:text-white">
+    <div className="min-h-screen bg-[#fdf2f8] text-slate-800 font-sans-clean flex flex-col antialiased selection:bg-pink-500 selection:text-white">
       {/* Top Navigation */}
       <Navbar
         language={language}

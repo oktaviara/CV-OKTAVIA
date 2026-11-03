@@ -45,8 +45,9 @@ export const ProfileCustomizerModal: React.FC<ProfileCustomizerModalProps> = ({
       name: 'Oktavia Ramadani',
       role: 'Web Developer',
       email: 'oktaviararamadani38@gmail.com',
-      phone: '085643642345',
+      phone: '085951396782',
       location: 'Cilacap, Jawa Tengah, Indonesia',
+      avatarUrl: defaultProfile.avatarUrl,
       availability: language === 'id' ? 'Tersedia untuk Proyek & Kontrak' : 'Available for Projects & Contracts',
     });
   };
@@ -57,21 +58,21 @@ export const ProfileCustomizerModal: React.FC<ProfileCustomizerModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200"
+        className="bg-white rounded-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-pink-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-xs px-6 py-5 border-b border-slate-100 flex items-center justify-between">
+        <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-xs px-6 py-5 border-b border-pink-100 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-sky-500" />
+            <Sparkles className="w-5 h-5 text-pink-500" />
             <div>
               <h3 className="font-bold text-slate-900 text-sm">{t.title}</h3>
-              <p className="text-[11px] text-slate-500">{t.subtitle}</p>
+              <p className="text-[11px] text-pink-900/60">{t.subtitle}</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 transition-colors"
+            className="w-8 h-8 rounded-full bg-pink-50 hover:bg-pink-100 flex items-center justify-center text-pink-700 hover:text-pink-950 transition-colors cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
@@ -80,23 +81,23 @@ export const ProfileCustomizerModal: React.FC<ProfileCustomizerModalProps> = ({
         {/* Body */}
         <div className="p-6 sm:p-8 space-y-6">
           {/* Quick Presets */}
-          <div className="bg-sky-50/70 border border-sky-100 p-4 rounded-xl space-y-2">
-            <span className="text-xs font-bold text-sky-900 uppercase tracking-wider block">
+          <div className="bg-pink-50/70 border border-pink-200/80 p-4 rounded-xl space-y-2">
+            <span className="text-xs font-bold text-pink-900 uppercase tracking-wider block">
               {language === 'id' ? 'Preset Identitas Cepat:' : 'Quick Identity Presets:'}
             </span>
             <div className="flex flex-wrap gap-2">
               <button
                 type="button"
                 onClick={handleApplyUserIdentity}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-sky-800 border border-sky-200 rounded-lg text-xs font-semibold hover:bg-sky-100/50 transition-colors shadow-2xs"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-pink-900 border border-pink-200 rounded-lg text-xs font-semibold hover:bg-pink-100/50 transition-colors shadow-2xs cursor-pointer"
               >
-                <UserCheck className="w-3.5 h-3.5 text-sky-600" />
+                <UserCheck className="w-3.5 h-3.5 text-pink-600" />
                 <span>Oktavia Ramadani (Cilacap)</span>
               </button>
               <button
                 type="button"
                 onClick={handleReset}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-slate-700 border border-slate-200 rounded-lg text-xs font-semibold hover:bg-slate-100 transition-colors shadow-2xs"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-slate-700 border border-pink-200 rounded-lg text-xs font-semibold hover:bg-pink-50 transition-colors shadow-2xs cursor-pointer"
               >
                 <RotateCcw className="w-3.5 h-3.5 text-slate-500" />
                 <span>{language === 'id' ? 'Atur Ulang ke Default' : 'Reset to Default'}</span>
@@ -114,7 +115,7 @@ export const ProfileCustomizerModal: React.FC<ProfileCustomizerModalProps> = ({
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-lg border border-slate-200 text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-hidden"
+                className="w-full px-3.5 py-2.5 rounded-lg border border-pink-200 text-sm focus:border-pink-500 focus:ring-1 focus:ring-pink-500 outline-hidden bg-pink-50/20"
               />
             </div>
 
@@ -127,7 +128,7 @@ export const ProfileCustomizerModal: React.FC<ProfileCustomizerModalProps> = ({
                 required
                 value={formData.role}
                 onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-lg border border-slate-200 text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-hidden"
+                className="w-full px-3.5 py-2.5 rounded-lg border border-pink-200 text-sm focus:border-pink-500 focus:ring-1 focus:ring-pink-500 outline-hidden bg-pink-50/20"
               />
             </div>
 
@@ -141,7 +142,7 @@ export const ProfileCustomizerModal: React.FC<ProfileCustomizerModalProps> = ({
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-lg border border-slate-200 text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-hidden"
+                  className="w-full px-3.5 py-2.5 rounded-lg border border-pink-200 text-sm focus:border-pink-500 focus:ring-1 focus:ring-pink-500 outline-hidden bg-pink-50/20"
                 />
               </div>
 
@@ -154,7 +155,7 @@ export const ProfileCustomizerModal: React.FC<ProfileCustomizerModalProps> = ({
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-lg border border-slate-200 text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-hidden"
+                  className="w-full px-3.5 py-2.5 rounded-lg border border-pink-200 text-sm focus:border-pink-500 focus:ring-1 focus:ring-pink-500 outline-hidden bg-pink-50/20"
                 />
               </div>
             </div>
@@ -167,28 +168,28 @@ export const ProfileCustomizerModal: React.FC<ProfileCustomizerModalProps> = ({
                 type="text"
                 value={formData.location}
                 onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-lg border border-slate-200 text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-hidden mb-2"
+                className="w-full px-3.5 py-2.5 rounded-lg border border-pink-200 text-sm focus:border-pink-500 focus:ring-1 focus:ring-pink-500 outline-hidden bg-pink-50/20 mb-2"
                 placeholder="e.g. Jakarta, Indonesia"
               />
             </div>
 
             {/* Actions */}
-            <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
+            <div className="pt-4 border-t border-pink-100 flex items-center justify-between gap-3">
               <button
                 type="button"
                 onClick={handleReset}
-                className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
+                className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-pink-900 transition-colors cursor-pointer"
               >
                 {t.resetDefaults}
               </button>
 
               <button
                 type="submit"
-                className="inline-flex items-center gap-1.5 px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-slate-900 hover:bg-sky-600 rounded-lg transition-colors shadow-xs"
+                className="inline-flex items-center gap-1.5 px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-pink-600 hover:bg-pink-700 rounded-lg transition-colors shadow-xs shadow-pink-200 cursor-pointer"
               >
                 {savedSuccess ? (
                   <>
-                    <Check className="w-4 h-4 text-emerald-400" />
+                    <Check className="w-4 h-4 text-white" />
                     <span>{language === 'id' ? 'Tersimpan!' : 'Saved!'}</span>
                   </>
                 ) : (

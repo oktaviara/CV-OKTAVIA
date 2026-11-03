@@ -59,8 +59,8 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-100 py-3.5'
-          : 'bg-white/80 backdrop-blur-xs py-5'
+          ? 'bg-[#fdf2f8]/95 backdrop-blur-md shadow-xs border-b border-pink-200 py-3.5'
+          : 'bg-[#fdf2f8]/85 backdrop-blur-xs py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between gap-8">
@@ -74,8 +74,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="flex items-center gap-2 group whitespace-nowrap shrink-0 text-slate-900 tracking-wider font-bold transition-opacity hover:opacity-85"
         >
           <div className="flex items-center font-bold tracking-tighter text-xl">
-            <span className="text-sky-500 font-extrabold mr-0.5">//</span>
-            <span className="text-sky-500 font-black tracking-tight">{initials}</span>
+            <span className="text-pink-500 font-extrabold mr-0.5">//</span>
+            <span className="text-pink-500 font-black tracking-tight">{initials}</span>
           </div>
           <span className="text-base sm:text-lg font-semibold tracking-widest uppercase text-slate-900">
             {profile.name}
@@ -92,13 +92,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={() => scrollTo(item.id)}
                 className={`transition-colors uppercase whitespace-nowrap shrink-0 py-1 relative ${
                   isActive
-                    ? 'text-sky-500 font-bold'
+                    ? 'text-pink-600 font-bold'
                     : 'text-slate-600 hover:text-slate-950 font-medium'
                 }`}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-sky-500 rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-500 rounded-full" />
                 )}
               </button>
             );
@@ -109,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center gap-3 shrink-0">
           {/* Bilingual Switcher (ID / EN) */}
           <div
-            className="flex items-center p-0.5 bg-slate-100 rounded-full border border-slate-200/80"
+            className="flex items-center p-0.5 bg-pink-100/70 rounded-full border border-pink-200"
             role="group"
             aria-label="Language selection"
           >
@@ -117,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => onLanguageChange('id')}
               className={`px-2.5 py-1 text-xs font-bold rounded-full transition-all flex items-center gap-1 ${
                 language === 'id'
-                  ? 'bg-sky-500 text-white shadow-xs'
+                  ? 'bg-pink-500 text-white shadow-xs'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
               title="Bahasa Indonesia"
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => onLanguageChange('en')}
               className={`px-2.5 py-1 text-xs font-bold rounded-full transition-all flex items-center gap-1 ${
                 language === 'en'
-                  ? 'bg-sky-500 text-white shadow-xs'
+                  ? 'bg-pink-500 text-white shadow-xs'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
               title="English"
@@ -142,17 +142,17 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Quick Edit Profile trigger */}
           <button
             onClick={onOpenCustomizer}
-            className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
+            className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-pink-900 bg-pink-100/70 hover:bg-pink-200/70 rounded-lg transition-colors border border-pink-200/60"
             title="Edit info portofolio / Customize portfolio"
           >
-            <Sparkles className="w-3.5 h-3.5 text-sky-500" />
+            <Sparkles className="w-3.5 h-3.5 text-pink-500" />
             <span className="hidden xl:inline">{language === 'id' ? 'Sesuaikan' : 'Customize'}</span>
           </button>
 
           {/* Hire Me CTA Button */}
           <button
             onClick={() => scrollTo('contact')}
-            className="hidden sm:inline-flex items-center gap-1 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-slate-900 rounded-lg hover:bg-sky-600 transition-colors shadow-xs"
+            className="hidden sm:inline-flex items-center gap-1 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-pink-600 rounded-lg hover:bg-pink-700 transition-colors shadow-xs"
           >
             <span>{t.hireMe}</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -171,14 +171,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 px-6 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden bg-[#fdf2f8] border-b border-pink-200 px-6 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col gap-4">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className={`text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-slate-50 transition-colors ${
-                  activeSection === item.id ? 'text-sky-500 font-bold' : 'text-slate-700'
+                className={`text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-pink-100 transition-colors ${
+                  activeSection === item.id ? 'text-pink-600 font-bold' : 'text-slate-700'
                 }`}
               >
                 {item.label}
@@ -187,14 +187,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="pt-2 flex flex-col gap-3">
               <button
                 onClick={onOpenCustomizer}
-                className="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-medium text-slate-700 bg-slate-100 rounded-lg"
+                className="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-medium text-pink-900 bg-pink-100 rounded-lg"
               >
-                <Sparkles className="w-4 h-4 text-sky-500" />
+                <Sparkles className="w-4 h-4 text-pink-500" />
                 <span>{language === 'id' ? 'Sesuaikan Data Profil' : 'Customize Profile Data'}</span>
               </button>
               <button
                 onClick={() => scrollTo('contact')}
-                className="w-full py-3 text-center text-xs font-semibold uppercase tracking-wider text-white bg-slate-900 rounded-lg hover:bg-sky-600 transition-colors shadow-xs"
+                className="w-full py-3 text-center text-xs font-semibold uppercase tracking-wider text-white bg-pink-600 rounded-lg hover:bg-pink-700 transition-colors shadow-xs"
               >
                 {t.hireMe}
               </button>

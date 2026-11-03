@@ -31,28 +31,28 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-slate-200 flex flex-col"
+        className="bg-white rounded-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-pink-200 flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header toolbar */}
-        <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-xs px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+        <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-xs px-6 py-4 border-b border-pink-100 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="font-bold text-slate-900 text-sm">{t.cvModalTitle}</span>
             <span className="text-xs text-slate-400">·</span>
-            <span className="text-xs text-slate-500">{profile.name}</span>
+            <span className="text-xs text-pink-700 font-medium">{profile.name}</span>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-pink-900 bg-pink-50 hover:bg-pink-100 border border-pink-200 rounded-lg transition-colors cursor-pointer"
             >
-              <Printer className="w-3.5 h-3.5" />
+              <Printer className="w-3.5 h-3.5 text-pink-600" />
               <span>{language === 'id' ? 'Cetak / Simpan PDF' : 'Print / Save PDF'}</span>
             </button>
             <button
               onClick={onClose}
-              className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 transition-colors"
+              className="w-8 h-8 rounded-full bg-pink-50 hover:bg-pink-100 flex items-center justify-center text-pink-700 hover:text-pink-950 transition-colors cursor-pointer"
               aria-label="Close CV modal"
             >
               <X className="w-4 h-4" />
@@ -63,27 +63,34 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
         {/* Printable CV Content */}
         <div className="p-8 sm:p-12 space-y-8 bg-white text-slate-900 print:p-0">
           {/* Header */}
-          <div className="border-b border-slate-200 pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div>
-              <h1 className="font-display text-3xl sm:text-4xl font-bold text-slate-900">
-                {profile.name}
-              </h1>
-              <p className="text-lg font-medium text-sky-600 mt-1">
-                {profile.role}
-              </p>
+          <div className="border-b border-slate-200 pb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <img
+                src={profile.avatarUrl}
+                alt={profile.name}
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover object-[center_18%] border-2 border-pink-200 shadow-xs"
+              />
+              <div>
+                <h1 className="font-display text-2xl sm:text-3xl font-bold text-slate-900">
+                  {profile.name}
+                </h1>
+                <p className="text-base sm:text-lg font-medium text-pink-600 mt-0.5">
+                  {profile.role}
+                </p>
+              </div>
             </div>
 
             <div className="text-xs text-slate-600 space-y-1">
               <div className="flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-slate-400" />
+                <Mail className="w-3.5 h-3.5 text-pink-400" />
                 <span>{profile.email}</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-slate-400" />
+                <Phone className="w-3.5 h-3.5 text-pink-400" />
                 <span>{profile.phone}</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                <MapPin className="w-3.5 h-3.5 text-pink-400" />
                 <span>{profile.location}</span>
               </div>
             </div>
@@ -108,7 +115,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
               {skillsList.map((skill, idx) => (
                 <span
                   key={idx}
-                  className="px-2.5 py-1 bg-slate-100 rounded text-xs font-medium text-slate-800"
+                  className="px-2.5 py-1 bg-pink-50 border border-pink-200/60 rounded text-xs font-medium text-pink-900"
                 >
                   {skill.name}
                 </span>
@@ -128,13 +135,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
                     <h3 className="text-sm font-bold text-slate-900">
                       {item.role} · <span className="font-semibold text-slate-700">{item.company}</span>
                     </h3>
-                    <span className="text-xs font-mono text-slate-500">{item.period}</span>
+                    <span className="text-xs font-mono text-pink-700">{item.period}</span>
                   </div>
                   <p className="text-xs text-slate-600">{item.description}</p>
                   <ul className="space-y-1 pt-1">
                     {item.achievements.map((ach, aIdx) => (
                       <li key={aIdx} className="text-xs text-slate-600 flex items-start gap-2">
-                        <span className="text-sky-500 font-bold">›</span>
+                        <span className="text-pink-500 font-bold">›</span>
                         <span>{ach}</span>
                       </li>
                     ))}
